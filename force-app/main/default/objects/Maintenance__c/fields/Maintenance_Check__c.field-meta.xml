@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Maintenance_Check__c</fullName>
+    <externalId>false</externalId>
+    <label>Maintenance Check</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Maintenance_Type__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Seat Belts</fullName>
+                <default>false</default>
+                <label>Seat Belts</label>
+            </value>
+            <value>
+                <fullName>Seats</fullName>
+                <default>false</default>
+                <label>Seats</label>
+            </value>
+            <value>
+                <fullName>Doors</fullName>
+                <default>false</default>
+                <label>Doors</label>
+            </value>
+            <value>
+                <fullName>Windows</fullName>
+                <default>false</default>
+                <label>Windows</label>
+            </value>
+            <value>
+                <fullName>Mirrors</fullName>
+                <default>false</default>
+                <label>Mirrors</label>
+            </value>
+            <value>
+                <fullName>Heating and Cooling</fullName>
+                <default>false</default>
+                <label>Heating and Cooling</label>
+            </value>
+            <value>
+                <fullName>Emergency Kit and Fire Extinguisher</fullName>
+                <default>false</default>
+                <label>Emergency Kit and Fire Extinguisher</label>
+            </value>
+            <value>
+                <fullName>Fluids and Oil</fullName>
+                <default>false</default>
+                <label>Fluids and Oil</label>
+            </value>
+            <value>
+                <fullName>Tires</fullName>
+                <default>false</default>
+                <label>Tires</label>
+            </value>
+            <value>
+                <fullName>Lights</fullName>
+                <default>false</default>
+                <label>Lights</label>
+            </value>
+            <value>
+                <fullName>Brakes</fullName>
+                <default>false</default>
+                <label>Brakes</label>
+            </value>
+            <value>
+                <fullName>Drive Belts</fullName>
+                <default>false</default>
+                <label>Drive Belts</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Interior</controllingFieldValue>
+            <valueName>Seat Belts</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Interior</controllingFieldValue>
+            <valueName>Seats</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Interior</controllingFieldValue>
+            <valueName>Doors</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Interior</controllingFieldValue>
+            <valueName>Windows</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Interior</controllingFieldValue>
+            <valueName>Mirrors</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Interior</controllingFieldValue>
+            <valueName>Heating and Cooling</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Interior</controllingFieldValue>
+            <valueName>Emergency Kit and Fire Extinguisher</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Exterior</controllingFieldValue>
+            <valueName>Fluids and Oil</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Exterior</controllingFieldValue>
+            <valueName>Tires</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Exterior</controllingFieldValue>
+            <valueName>Lights</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Exterior</controllingFieldValue>
+            <valueName>Brakes</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Exterior</controllingFieldValue>
+            <valueName>Drive Belts</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

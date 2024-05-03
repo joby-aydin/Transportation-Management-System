@@ -1,0 +1,140 @@
+<template>
+    <div class="slds-align_absolute-top">
+        <div class="slds-box slds-theme_shade">
+            <table>
+                <tbody><tr>
+                        <td style="width:10%">
+                            <lightning-icon icon-name="custom:custom31" size="medium"></lightning-icon>
+                        </td>
+                        <td style="width:90%">
+                            <h1 style="font-size:1.1vw; text-indent:10px"> <b> Buses Inventory</b></h1>
+                        </td>
+                    </tr></tbody>
+            </table>
+        </div>
+    </div>
+    <div class="container">
+        <div class="slds-scrollable margin-design">
+            <template for:each={computedBusList} for:item="bus">
+                <div key={bus.Id} class="bus-card" onclick={handleBusClick} data-busid={bus.Id}>
+                    <div class="slds-box slds-theme_shade">
+                        <table>
+                            <tbody><tr>
+                                <td style="width:5%">
+                                    <lightning-icon icon-name="utility:product" size="x-small"></lightning-icon>
+                                </td>
+                                <td style="width:90%">
+                                    <h1 style="font-size:0.7vw; text-indent:5px"> <b> {bus.Name}</b></h1>
+                                </td>
+                            </tr></tbody>
+                        </table>
+                    </div>
+                    <div class="bus-image">
+                        <img src={bus.ImageUrl__c} alt="Bus Image" />
+                    </div>
+                    <div class="bus-caption">
+                        {bus.Current_Status__c}
+                    </div>
+                </div>
+            </template>
+        </div>
+        <div class="bus-details-container" if:true={selectedBus}>
+            <div class="slds-box slds-theme_shade">
+                <table>
+                    <tbody><tr>
+                        <td style="width:5%">
+                            <lightning-icon icon-name="utility:bookmark" size="small"></lightning-icon>
+                        </td>
+                        <td style="width:90%">
+                            <h1 style="font-size:0.8vw; text-indent:7px"> <b>Bus Details</b></h1>
+                        </td>
+                    </tr></tbody>
+                </table>
+            </div>
+            <div class="bus-details">
+                <template if:true={selectedBus}>
+                    <div class="bus-detail-row">
+                        <div class="bus-detail-label">Name:</div>
+                        <div class="bus-detail-value">
+                                <a onclick={handleNameClick} >{selectedBus.Name}</a>
+                        </div>
+                    </div>
+                    <div class="bus-detail-row">
+                        <div class="bus-detail-label">Year:</div>
+                        <div class="bus-detail-value">
+                                {selectedBus.Year__c}
+                        </div>
+                    </div>
+                    <div class="bus-detail-row">
+                        <div class="bus-detail-label">Max Capacity:</div>
+                        <div class="bus-detail-value">          
+                                {selectedBus.Maximum_Capacity__c}
+                        </div>
+                    </div>
+                    <div class="bus-detail-row">
+                        <div class="bus-detail-label slds-col">Odometer:</div>
+                        <div class="bus-detail-value slds-col">
+                            <template if:true={editMode}>
+                                <lightning-input class="my-top" type="number" name='Odometer_Reading__c' value={selectedBus.Odometer_Reading__c} onchange={handleBusInputChange}></lightning-input>
+                            </template>
+                            <template if:false={editMode}>
+                                {selectedBus.Odometer_Reading__c}
+                            </template>
+                        </div>
+                    </div>
+                </template>
+                <div class="button-container">
+                    <template if:true={selectedBus}>
+                        <template if:true={editMode}>
+                            <lightning-button label="Save" variant="brand" onclick={handleSaveClick} class="edit-button"></lightning-button>
+                            <lightning-button label="Cancel" variant="neutral" onclick={handleCancelClick}></lightning-button>
+                        </template>
+                        <template if:false={editMode}>
+                            <lightning-button label="Edit" variant="brand" onclick={handleEditClick} class="edit-button"></lightning-button>
+                            <lightning-button label="Cancel" variant="neutral" onclick={handleCancelClick}></lightning-button>
+                        </template>
+                    </template>
+                </div>
+            </div>
+            <div if:true={resaleValue} class="slds-box slds-theme_shade">
+                <table>
+                    <tbody><tr>
+                        <td style="width:5%">
+                            <lightning-icon icon-name="utility:adjust_value" size="small"></lightning-icon>
+                        </td>
+                        <td style="width:90%">
+                            <h1 style="font-size:0.8vw; text-indent:7px"> 
+                                <b>Resale Value</b>
+                            </h1>
+                        </td>
+                    </tr></tbody>
+                </table>
+            </div>
+            <div  class="resale-tile">
+                <p>{resaleValue}</p>
+            </div>
+
+            <div if:true={availableForRent}>
+                <div class="slds-box slds-theme_shade">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td style="width:5%">
+                                    <lightning-icon icon-name="utility:service_appointment" size="small"></lightning-icon>
+                                </td>
+                                <td style="width:95%">
+                                    <div class="slds-theme_shade" style="font-size:0.8vw; text-indent:7px">
+                                        <b>Available for Rent</b>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="resale-tile">
+                    <lightning-button label="Create Reservation" variant="brand" onclick={handleCreateReservationClick} class="slds-button slds-button_brand"></lightning-button>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

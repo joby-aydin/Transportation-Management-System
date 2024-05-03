@@ -1,0 +1,100 @@
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: aliceblue;
+}
+
+.slds-scrollable {
+    display: grid;
+    grid-row: 1 / 5;
+    grid-column: 1 / 3;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto;
+    border: 1px solid #ccc;
+    justify-items: center;
+    border-radius: 5px;
+}
+
+.my-top {
+    margin-top: -30px;
+}
+
+.bus-card {
+    cursor: pointer;
+    width: 12rem;
+    text-align: left;
+    border-radius: 5px;
+    padding: 1rem;
+
+}
+.bus-caption{
+    text-align: center;
+}
+
+.bus-image img {
+    width: 160px;
+    height: 120px;
+}
+
+.bus-details-container {
+    grid-row: 1 / 3;
+    grid-column: 3 / 3;
+    border: 1px solid #ccc;
+    margin-left: 2rem;
+    border-radius: 5px;
+}
+
+.margin-design {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.bus-details-text{
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    text-align: justify;
+}
+
+.bus-details {
+    grid-row: 1 / 3;
+    grid-column: 3 / 3;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+}
+
+.bus-detail-row {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 0.5rem;
+    margin-top: 1rem;
+}
+
+.bus-detail-label {
+    flex-basis: 30%;
+    font-weight: bold;
+}
+
+.bus-detail-value {
+    flex-basis: 70%;
+}
+
+.resale-tile {
+    margin-top: 1rem;
+    font-weight: bold;
+    text-align: center;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+
+}
+
+.button-container {
+    margin-top: 1rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}

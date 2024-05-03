@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Reservations">
+        <!-- Reservation list displayed as a table -->
+        <template if:true={reservations}>
+            <lightning-datatable
+                key-field="Id"
+                data={reservations}
+                columns={columns}
+                hide-checkbox-column="true"
+                onrowaction={handleRowAction}>
+            </lightning-datatable>
+        </template>
+    </lightning-card>
+</template>
